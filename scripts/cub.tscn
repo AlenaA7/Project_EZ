@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bimxcu8ikvg0f"]
+
+[ext_resource type="Texture2D" uid="uid://dwhhf50ugv2qr" path="res://tileset.png" id="1_1l0vu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jvqrp"]
+size = Vector2(15, 15)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+position = Vector2(9, 8)
+lock_rotation = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1l0vu")
+region_enabled = true
+region_rect = Rect2(80, 96, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jvqrp")
+
+[connection signal="sleeping_state_changed" from="." to="." method="_on_sleeping_state_changed"]
