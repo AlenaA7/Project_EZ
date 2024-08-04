@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://vetkef0td2a1"]
+[gd_scene load_steps=24 format=3 uid="uid://vetkef0td2a1"]
 
 [ext_resource type="PackedScene" uid="uid://cgultwssk4lnk" path="res://player.tscn" id="1_1qakr"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_2bfif"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bhg3kbyh1ycm" path="res://tile_map.tscn" id="10_ielgq"]
 [ext_resource type="FontFile" uid="uid://dnobr83k1q170" path="res://monogram-extended.ttf" id="10_kvtll"]
 [ext_resource type="PackedScene" uid="uid://bbk6wy38lqiv2" path="res://pshelki.tscn" id="11_o7vq3"]
+[ext_resource type="PackedScene" uid="uid://54h7team8o8f" path="res://the_end.tscn" id="12_nfded"]
 [ext_resource type="PackedScene" uid="uid://ctfl04vsqp0m4" path="res://lestica.tscn" id="12_w7s8x"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_es33y"]
@@ -185,36 +186,8 @@ main = NodePath("../..")
 position = Vector2(397, 137)
 main = NodePath("../..")
 
-[node name="piki16" parent="pikis" node_paths=PackedStringArray("main") instance=ExtResource("1_g5tk0")]
-position = Vector2(1570, 167)
-main = NodePath("../..")
-
-[node name="piki17" parent="pikis" node_paths=PackedStringArray("main") instance=ExtResource("1_g5tk0")]
-position = Vector2(1584, 167)
-main = NodePath("../..")
-
-[node name="piki22" parent="pikis" node_paths=PackedStringArray("main") instance=ExtResource("1_g5tk0")]
-position = Vector2(1596, 166)
-main = NodePath("../..")
-
-[node name="piki23" parent="pikis" node_paths=PackedStringArray("main") instance=ExtResource("1_g5tk0")]
-position = Vector2(1610, 166)
-main = NodePath("../..")
-
 [node name="piki18" parent="pikis" node_paths=PackedStringArray("main") instance=ExtResource("1_g5tk0")]
-position = Vector2(1514, 167)
-main = NodePath("../..")
-
-[node name="piki19" parent="pikis" node_paths=PackedStringArray("main") instance=ExtResource("1_g5tk0")]
-position = Vector2(1528, 167)
-main = NodePath("../..")
-
-[node name="piki20" parent="pikis" node_paths=PackedStringArray("main") instance=ExtResource("1_g5tk0")]
-position = Vector2(1542, 167)
-main = NodePath("../..")
-
-[node name="piki21" parent="pikis" node_paths=PackedStringArray("main") instance=ExtResource("1_g5tk0")]
-position = Vector2(1556, 167)
+position = Vector2(1514, 168)
 main = NodePath("../..")
 
 [node name="piki14" parent="pikis" node_paths=PackedStringArray("main") instance=ExtResource("1_g5tk0")]
@@ -226,7 +199,7 @@ position = Vector2(-75, 161)
 
 [node name="player" parent="." node_paths=PackedStringArray("main") instance=ExtResource("1_1qakr")]
 z_index = 5
-position = Vector2(-698, 260)
+position = Vector2(1536, 64)
 main = NodePath("..")
 
 [node name="Camera2D" type="Camera2D" parent="player"]
@@ -330,6 +303,9 @@ main = NodePath("../..")
 [node name="pshelki4" parent="pshelkis" node_paths=PackedStringArray("main") instance=ExtResource("11_o7vq3")]
 position = Vector2(407, 60)
 main = NodePath("../..")
+
+[node name="the_end" parent="." instance=ExtResource("12_nfded")]
+position = Vector2(1617, 142)
 
 [node name="ladders" type="Node2D" parent="."]
 position = Vector2(-3, -4)

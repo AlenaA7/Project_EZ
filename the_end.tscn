@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://54h7team8o8f"]
+
+[ext_resource type="Script" path="res://scripts/the_end.gd" id="1_40kjq"]
+[ext_resource type="Texture2D" uid="uid://djja05u3ecxr6" path="res://doc.png" id="1_s4mpy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ng5bs"]
+atlas = ExtResource("1_s4mpy")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20dam"]
+atlas = ExtResource("1_s4mpy")
+region = Rect2(80, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrldy"]
+atlas = ExtResource("1_s4mpy")
+region = Rect2(96, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5b4o"]
+atlas = ExtResource("1_s4mpy")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fngdr"]
+atlas = ExtResource("1_s4mpy")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjxv2"]
+atlas = ExtResource("1_s4mpy")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_orjau"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ng5bs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20dam")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrldy")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5b4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fngdr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjxv2")
+}],
+"loop": true,
+"name": &"stop",
+"speed": 1.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_umfjm"]
+radius = 6.0
+height = 20.0
+
+[node name="the_end" type="Area2D"]
+script = ExtResource("1_40kjq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_orjau")
+animation = &"happy"
+autoplay = "stop"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 7)
+shape = SubResource("CapsuleShape2D_umfjm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

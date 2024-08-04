@@ -87,6 +87,11 @@ animations = [{
 "name": &"jump",
 "speed": 5.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"on_ladder",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_57dxl")
@@ -200,6 +205,11 @@ animations = [{
 "loop": true,
 "name": &"jump",
 "speed": 4.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"on_ladder",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -355,17 +365,15 @@ shape = SubResource("CapsuleShape2D_oeyxs")
 visible = false
 position = Vector2(0, 3.5)
 sprite_frames = SubResource("SpriteFrames_jhamf")
-animation = &"dead"
+animation = &"on_ladder"
 autoplay = "stop"
-frame_progress = 0.515877
 
 [node name="Superman" type="AnimatedSprite2D" parent="."]
 visible = false
 position = Vector2(-1, 6)
 sprite_frames = SubResource("SpriteFrames_6qean")
-animation = &"dead"
+animation = &"on_ladder"
 autoplay = "stop"
-frame_progress = 0.349602
 
 [node name="ne_Buy" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -373,4 +381,4 @@ position = Vector2(0, 3.5)
 sprite_frames = SubResource("SpriteFrames_6ngbi")
 animation = &"dead"
 autoplay = "stop"
-frame_progress = 0.825769
+frame_progress = 0.114664

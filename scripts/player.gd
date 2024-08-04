@@ -7,7 +7,6 @@ const RUN_SPEED = 1000.0
 const  SPEED_ON_LESTICA = 100
 const JUMP_VELOCITY = -250.0
 
-
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 @export var main: Main
 
@@ -27,6 +26,8 @@ func _ready():
 
 func _on_dead():
 	is_dead = true
+	get_node("CollisionShape2D").queue_free()
+	velocity.y = JUMP_VELOCITY
 
 func on_lestica(value: bool, ladder_id: int):
 	ladders[ladder_id] = value
@@ -37,14 +38,11 @@ func is_on_lestnitsa() -> bool:
 			return true
 	return false
 
-
 func _process(_delta):
 	if Input.is_action_just_pressed("reset"):
 		#main.on_death()
 		get_tree().reload_current_scene()
-	
-
-	
+		
 func _physics_process(delta):
 	if is_dead:
 		dead_process(delta)
@@ -52,12 +50,15 @@ func _physics_process(delta):
 		life_process(delta)
 		
 func dead_process(delta):
+	velocity.x = 0
 	sprite.play("dead")
-	#velocity.y = JUMP_VELOCITY
-	velocity.y += gravity * delta
-
-
 	
+	
+	velocity.y += gravity * delta
+	move_and_slide()
+	
+		
+
 func life_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -71,6 +72,7 @@ func life_process(delta):
 				
 		
 	if 	is_on_lestnitsa():
+		sprite.play('')
 		if Input.is_action_pressed("up"):
 			velocity.y = -SPEED_ON_LESTICA 
 		elif Input.is_action_pressed("down"):
