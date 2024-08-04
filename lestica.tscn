@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctfl04vsqp0m4"]
+
+[ext_resource type="Texture2D" uid="uid://10cwhbuvkgjl" path="res://nature-paltformer-tileset-16x16.png" id="1_6u8fq"]
+[ext_resource type="Script" path="res://scripts/lestica.gd" id="1_to4f6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpe7n"]
+atlas = ExtResource("1_6u8fq")
+region = Rect2(0, 63.763, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h7vvs"]
+size = Vector2(15.75, 14)
+
+[node name="Area2D" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_to4f6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+texture = SubResource("AtlasTexture_fpe7n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_h7vvs")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://b0sq7emphuekq"]
+
+[ext_resource type="Script" path="res://scripts/KillZone.gd" id="1_18slt"]
+[ext_resource type="Texture2D" uid="uid://de0owj2lej7nb" path="res://muravishki.png" id="2_xdadl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yd6cf"]
+radius = 7.07107
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmxfm"]
+atlas = ExtResource("2_xdadl")
+region = Rect2(0, 0, 54, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jhej"]
+atlas = ExtResource("2_xdadl")
+region = Rect2(54, 0, 54, 41)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qjkld"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmxfm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jhej")
+}],
+"loop": true,
+"name": &"murav",
+"speed": 5.0
+}]
+
+[node name="KillZone" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_18slt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_yd6cf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.262195, 0.262195)
+sprite_frames = SubResource("SpriteFrames_qjkld")
+animation = &"murav"
+autoplay = "murav"
+frame_progress = 0.164661
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://5r2unh2dcj27"]
+
+[ext_resource type="Texture2D" uid="uid://brny044is15yd" path="res://ne_buy.png" id="1_b14sc"]
+[ext_resource type="FontFile" uid="uid://dnobr83k1q170" path="res://monogram-extended.ttf" id="2_6vd2a"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="2_105n0"]
+[ext_resource type="Texture2D" uid="uid://dihsi5l76q7bw" path="res://superman.png" id="4_746gc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71vjd"]
+atlas = ExtResource("1_b14sc")
+region = Rect2(0, 0, 17.8168, 29)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0uhjp"]
+font = ExtResource("2_6vd2a")
+font_size = 64
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_goip0"]
+atlas = ExtResource("4_746gc")
+region = Rect2(43, 0, 21, 26)
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_105n0")
+
+[node name="Ded" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 348.0
+offset_top = 291.0
+offset_right = 480.0
+offset_bottom = 506.0
+texture_normal = SubResource("AtlasTexture_71vjd")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 240.0
+offset_right = 811.0
+offset_bottom = 288.0
+text = "CHOOSE YOUR CHARACTER"
+label_settings = SubResource("LabelSettings_0uhjp")
+
+[node name="Hero" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 682.0
+offset_top = 341.0
+offset_right = 810.0
+offset_bottom = 514.0
+texture_normal = SubResource("AtlasTexture_goip0")
+stretch_mode = 4
+
+[connection signal="pressed" from="Ded" to="." method="_on_ded_pressed"]
+[connection signal="pressed" from="Hero" to="." method="_on_hero_pressed"]

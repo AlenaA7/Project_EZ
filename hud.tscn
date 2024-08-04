@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://cb6u8se2qredr"]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_7tx6e"]
+[ext_resource type="Texture2D" uid="uid://drcnntphh4j2h" path="res://ezik.png" id="1_obi6s"]
+[ext_resource type="FontFile" uid="uid://dnobr83k1q170" path="res://monogram-extended.ttf" id="3_6qdno"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mct8o"]
+atlas = ExtResource("1_obi6s")
+region = Rect2(16.568, 1.45963, 17.4318, 12.5404)
+
+[sub_resource type="LabelSettings" id="LabelSettings_y1a4i"]
+font = ExtResource("3_6qdno")
+font_size = 40
+outline_size = 5
+outline_color = Color(0.478431, 0.254902, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kjtq1"]
+font = ExtResource("3_6qdno")
+font_size = 40
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="hud" type="CanvasLayer"]
+script = ExtResource("1_7tx6e")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 84.0
+offset_bottom = 70.0
+texture = SubResource("AtlasTexture_mct8o")
+
+[node name="egik" type="Label" parent="."]
+offset_left = 91.0
+offset_top = 28.0
+offset_right = 222.0
+offset_bottom = 79.0
+text = "EZIK: 0 "
+label_settings = SubResource("LabelSettings_y1a4i")
+
+[node name="death" type="Label" parent="."]
+offset_left = 949.0
+offset_top = 21.0
+offset_right = 1132.0
+offset_bottom = 83.0
+text = "DEATH: 0"
+label_settings = SubResource("LabelSettings_kjtq1")
