@@ -43,4 +43,7 @@ animation = &"murav"
 autoplay = "murav"
 frame_progress = 0.164661
 
+[node name="killtime" type="Timer" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="killtime" to="." method="_on_killtime_timeout"]

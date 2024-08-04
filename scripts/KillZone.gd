@@ -13,9 +13,8 @@ func _process(_delta):
 
 func _on_body_entered(body):
 	if body is Player:
+		$killtime.start()
+	
+
+func _on_killtime_timeout():
 		should_restart = true
-		#Global.dead = true
-#СЛОМАЛАСЬ КИЛЛ ЗОНА
-
-
-
