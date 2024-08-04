@@ -17,4 +17,4 @@ func _on_body_entered(body):
 	
 
 func _on_killtime_timeout():
-		should_restart = true
+	should_restart = true

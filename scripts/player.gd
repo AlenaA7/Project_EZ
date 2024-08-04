@@ -10,6 +10,7 @@ const JUMP_VELOCITY = -250.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 @export var main: Main
+
 @export var pushForce = 51000
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var count_jump = 2
@@ -40,8 +41,7 @@ func _process(_delta):
 	if Input.is_action_just_pressed("reset"):
 		#main.on_death()
 		get_tree().reload_current_scene()
-
-
+	
 func _physics_process(delta):
 #СДЕЛАТЬ ИНТЕРЕСНУЮ СМЕРТЬ
 	#if Global.dead: 
