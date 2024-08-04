@@ -77,7 +77,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"dead",
-"speed": 6.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -116,113 +116,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ejvns")
-}],
-"loop": true,
-"name": &"stop",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y62h6"]
-atlas = ExtResource("5_mn6rd")
-region = Rect2(0, 0, 29, 18)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ldwhv"]
-atlas = ExtResource("6_aalkl")
-region = Rect2(0, 0, 18, 29)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qs1hb"]
-atlas = ExtResource("3_jp2lp")
-region = Rect2(0, 0, 18, 29)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1mhaw"]
-atlas = ExtResource("3_jp2lp")
-region = Rect2(90, 0, 18, 29)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g6trm"]
-atlas = ExtResource("3_jp2lp")
-region = Rect2(72, 0, 18, 29)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yk7tc"]
-atlas = ExtResource("3_jp2lp")
-region = Rect2(90, 0, 18, 29)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m5no7"]
-atlas = ExtResource("3_jp2lp")
-region = Rect2(108, 0, 18, 29)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gygt0"]
-atlas = ExtResource("3_jp2lp")
-region = Rect2(126, 0, 18, 29)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k8ioc"]
-atlas = ExtResource("3_jp2lp")
-region = Rect2(0, 0, 18, 29)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8yehj"]
-atlas = ExtResource("3_jp2lp")
-region = Rect2(18, 0, 18, 29)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g5na5"]
-atlas = ExtResource("3_jp2lp")
-region = Rect2(36, 0, 18, 29)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_we8id"]
-atlas = ExtResource("3_jp2lp")
-region = Rect2(54, 0, 18, 29)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_6ngbi"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y62h6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ldwhv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qs1hb")
-}],
-"loop": true,
-"name": &"dead",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1mhaw")
-}],
-"loop": true,
-"name": &"jump",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g6trm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yk7tc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m5no7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gygt0")
-}],
-"loop": true,
-"name": &"run",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k8ioc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8yehj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g5na5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_we8id")
 }],
 "loop": true,
 "name": &"stop",
@@ -295,7 +188,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"dead",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -343,6 +236,113 @@ animations = [{
 "speed": 4.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_y62h6"]
+atlas = ExtResource("5_mn6rd")
+region = Rect2(0, 0, 29, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldwhv"]
+atlas = ExtResource("6_aalkl")
+region = Rect2(0, 0, 18, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qs1hb"]
+atlas = ExtResource("3_jp2lp")
+region = Rect2(0, 0, 18, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1mhaw"]
+atlas = ExtResource("3_jp2lp")
+region = Rect2(90, 0, 18, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6trm"]
+atlas = ExtResource("3_jp2lp")
+region = Rect2(72, 0, 18, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yk7tc"]
+atlas = ExtResource("3_jp2lp")
+region = Rect2(90, 0, 18, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5no7"]
+atlas = ExtResource("3_jp2lp")
+region = Rect2(108, 0, 18, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gygt0"]
+atlas = ExtResource("3_jp2lp")
+region = Rect2(126, 0, 18, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8ioc"]
+atlas = ExtResource("3_jp2lp")
+region = Rect2(0, 0, 18, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yehj"]
+atlas = ExtResource("3_jp2lp")
+region = Rect2(18, 0, 18, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5na5"]
+atlas = ExtResource("3_jp2lp")
+region = Rect2(36, 0, 18, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we8id"]
+atlas = ExtResource("3_jp2lp")
+region = Rect2(54, 0, 18, 29)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ngbi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y62h6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldwhv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qs1hb")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1mhaw")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6trm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yk7tc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5no7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gygt0")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8ioc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yehj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5na5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we8id")
+}],
+"loop": true,
+"name": &"stop",
+"speed": 5.0
+}]
+
 [node name="player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_4dt17")
@@ -357,15 +357,7 @@ position = Vector2(0, 3.5)
 sprite_frames = SubResource("SpriteFrames_jhamf")
 animation = &"dead"
 autoplay = "stop"
-frame_progress = 0.741825
-
-[node name="ne_Buy" type="AnimatedSprite2D" parent="."]
-visible = false
-position = Vector2(0, 3.5)
-sprite_frames = SubResource("SpriteFrames_6ngbi")
-animation = &"jump"
-autoplay = "stop"
-frame_progress = 0.0126947
+frame_progress = 0.515877
 
 [node name="Superman" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -373,4 +365,12 @@ position = Vector2(-1, 6)
 sprite_frames = SubResource("SpriteFrames_6qean")
 animation = &"dead"
 autoplay = "stop"
-frame_progress = 0.396434
+frame_progress = 0.349602
+
+[node name="ne_Buy" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, 3.5)
+sprite_frames = SubResource("SpriteFrames_6ngbi")
+animation = &"dead"
+autoplay = "stop"
+frame_progress = 0.825769

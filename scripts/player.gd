@@ -46,74 +46,78 @@ func _process(_delta):
 
 	
 func _physics_process(delta):
-#СДЕЛАТЬ ИНТЕРЕСНУЮ СМЕРТЬ
-	#if Global.dead: 
-		#velocity.y = JUMP_VELOCITY
 	if is_dead:
-		sprite.play("dead")
-		return is_dead
+		dead_process(delta)
 	else:
+		life_process(delta)
 		
-		if not is_on_floor():
+func dead_process(delta):
+	sprite.play("dead")
+	#velocity.y = JUMP_VELOCITY
+	velocity.y += gravity * delta
+
+
+	
+func life_process(delta):
+	if not is_on_floor():
+		velocity.y += gravity * delta
+
+	if Input.is_action_just_pressed("jump"):	
+		if count_jump > 0:
+			velocity.y = JUMP_VELOCITY
+			count_jump -= 1
+		else:
 			velocity.y += gravity * delta
-		
-		if Input.is_action_just_pressed("jump"):	
-			if count_jump > 0:
-				velocity.y = JUMP_VELOCITY
-				count_jump -= 1
-			else:
-				velocity.y += gravity * delta
 				
 		
-		if 	is_on_lestnitsa():
-			if Input.is_action_pressed("up"):
-				velocity.y = -SPEED_ON_LESTICA 
-			elif Input.is_action_pressed("down"):
-				velocity.y = SPEED_ON_LESTICA 
-			else:
-				velocity.y = 0
+	if 	is_on_lestnitsa():
+		if Input.is_action_pressed("up"):
+			velocity.y = -SPEED_ON_LESTICA 
+		elif Input.is_action_pressed("down"):
+			velocity.y = SPEED_ON_LESTICA 
+		else:
+			velocity.y = 0
+		sprite.play("stop")
+	
+	
+	if Input.is_action_just_pressed("jump") and is_on_floor() and not is_on_lestnitsa():
+		velocity.y = JUMP_VELOCITY	
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction = Input.get_axis("left", "right")
+		
+	#if Input.is_action_just_pressed("running") and is_on_floor():
+		#velocity.x = direction * RUN_SPEED
+		#print("run")
+		
+	if direction < 0:
+		sprite.flip_h = true
+	if direction > 0:
+		sprite.flip_h = false
+		
+	if not is_on_floor():
+		sprite.play("jump")
+	else:
+		count_jump = 1
+		if direction == 0:
 			sprite.play("stop")
-		
-		
-		if Input.is_action_just_pressed("jump") and is_on_floor() and not is_on_lestnitsa():
-			velocity.y = JUMP_VELOCITY	
-		# Get the input direction and handle the movement/deceleration.
-		# As good practice, you should replace UI actions with custom gameplay actions.
-		var direction = Input.get_axis("left", "right")
-			
-		#if Input.is_action_just_pressed("running") and is_on_floor():
-			#velocity.x = direction * RUN_SPEED
-			#print("run")
-			
-		if direction < 0:
-			sprite.flip_h = true
-		if direction > 0:
-			sprite.flip_h = false
-			
-		if not is_on_floor():
-			sprite.play("jump")
 		else:
-			count_jump = 1
-			if direction == 0:
-				sprite.play("stop")
-			else:
-				sprite.play("run")
+			sprite.play("run")
 
-		if direction:
-			velocity.x = direction * SPEED
-		else:
-			velocity.x = 0 # move_toward(velocity.x, 0, SPEED)
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = 0 # move_toward(velocity.x, 0, SPEED)
 
-		if move_and_slide():
-			for i in get_slide_collision_count():
-				var col = get_slide_collision(i)
-				if col.get_collider() is RigidBody2D:
-					var dir = col.get_normal().rotated(-direction * PI/4) * - pushForce
-					col.get_collider().apply_force(dir)
-					
-	
+	if move_and_slide():
+		for i in get_slide_collision_count():
+			var col = get_slide_collision(i)
+			if col.get_collider() is RigidBody2D:
+				var dir = col.get_normal().rotated(-direction * PI/4) * - pushForce
+				col.get_collider().apply_force(dir)
+		
 
-	
+
 
 
 
