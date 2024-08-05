@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://crqlj250mfil5"]
+
+[ext_resource type="Script" path="res://scripts/KillZone.gd" id="1_ee406"]
+[ext_resource type="AudioStream" uid="uid://kbp35cck71ri" path="res://music/game_over_music.mp3" id="2_c6xfm"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_es33y"]
+distance = -13.0
+
+[node name="KillZone" type="Area2D" node_paths=PackedStringArray("main")]
+position = Vector2(242, 165)
+collision_mask = 2
+script = ExtResource("1_ee406")
+main = NodePath("")
+
+[node name="killtime" type="Timer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-30, 196)
+shape = SubResource("WorldBoundaryShape2D_es33y")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_c6xfm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="killtime" to="." method="_on_killtime_timeout"]

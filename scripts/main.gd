@@ -5,6 +5,8 @@ var score = 0
 
 @onready var coins = $coins
 @onready var hud = $hud
+@onready var sound_ezik = $ezik
+
 
 func _ready():
 	for coin in coins.get_children():
@@ -14,6 +16,8 @@ func _ready():
 func _on_coin_picked_up():
 	score += 1
 	hud.set_score(score)
+	sound_ezik.play()
+
 	
 
 func on_death():

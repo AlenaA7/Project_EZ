@@ -1,10 +1,9 @@
-[gd_scene load_steps=31 format=3 uid="uid://vetkef0td2a1"]
+[gd_scene load_steps=30 format=3 uid="uid://vetkef0td2a1"]
 
 [ext_resource type="PackedScene" uid="uid://cgultwssk4lnk" path="res://player.tscn" id="1_1qakr"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_2bfif"]
 [ext_resource type="PackedScene" uid="uid://cb6u8se2qredr" path="res://hud.tscn" id="1_4nqwe"]
 [ext_resource type="PackedScene" uid="uid://b0sq7emphuekq" path="res://piki.tscn" id="1_g5tk0"]
-[ext_resource type="Script" path="res://scripts/KillZone.gd" id="3_3ddu5"]
 [ext_resource type="PackedScene" uid="uid://onb6oyacrjms" path="res://coin.tscn" id="4_4do7b"]
 [ext_resource type="PackedScene" uid="uid://25613lqglpgt" path="res://platform.tscn" id="6_2ibr4"]
 [ext_resource type="PackedScene" uid="uid://d10hbb3odw5p4" path="res://moved_kill.tscn" id="10_1vjuq"]
@@ -16,7 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://54h7team8o8f" path="res://the_end.tscn" id="12_nfded"]
 [ext_resource type="PackedScene" uid="uid://ctfl04vsqp0m4" path="res://lestica.tscn" id="12_w7s8x"]
 [ext_resource type="Texture2D" uid="uid://m7bvi7imjveg" path="res://череп2.png" id="13_36cya"]
-[ext_resource type="AudioStream" uid="uid://kbp35cck71ri" path="res://music/game_over_music.mp3" id="16_rytr5"]
+[ext_resource type="PackedScene" uid="uid://crqlj250mfil5" path="res://water.tscn" id="15_djbvr"]
+[ext_resource type="AudioStream" uid="uid://l5kx2low16ma" path="res://music/zvuk-fyrkane-ezhika_2.mp3" id="17_gvt5h"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ofsyu"]
 font = ExtResource("10_kvtll")
@@ -130,9 +130,6 @@ _data = {
 "RESET": SubResource("Animation_urjuc"),
 "moved_kill": SubResource("Animation_w7f0a")
 }
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_es33y"]
-distance = -13.0
 
 [node name="main" type="Node2D"]
 position = Vector2(-1188, -374)
@@ -394,24 +391,12 @@ position = Vector2(-899, 241)
 scale = Vector2(2.75994, 2.43201)
 main = NodePath("..")
 
-[node name="KillZone" type="Area2D" parent="." node_paths=PackedStringArray("main")]
-position = Vector2(242, 165)
-collision_mask = 2
-script = ExtResource("3_3ddu5")
+[node name="water" parent="." node_paths=PackedStringArray("main") instance=ExtResource("15_djbvr")]
 main = NodePath("..")
-
-[node name="killtime" type="Timer" parent="KillZone"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
-position = Vector2(-30, 196)
-shape = SubResource("WorldBoundaryShape2D_es33y")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="KillZone"]
-stream = ExtResource("16_rytr5")
 
 [node name="player" parent="." node_paths=PackedStringArray("main") instance=ExtResource("1_1qakr")]
 z_index = 5
-position = Vector2(-669, 223)
+position = Vector2(1491, 55)
 main = NodePath("..")
 
 [node name="Camera2D" type="Camera2D" parent="player"]
@@ -422,5 +407,6 @@ limit_right = 727379968
 limit_bottom = 0
 position_smoothing_speed = 0.0
 
-[connection signal="body_entered" from="KillZone" to="KillZone" method="_on_body_entered"]
-[connection signal="timeout" from="KillZone/killtime" to="KillZone" method="_on_killtime_timeout"]
+[node name="ezik" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_gvt5h")
+volume_db = 10.0

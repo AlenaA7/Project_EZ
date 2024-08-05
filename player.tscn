@@ -494,6 +494,7 @@ frame_progress = 0.922158
 
 [node name="back_music" type="AudioStreamPlayer" parent="ne_Buy"]
 stream = ExtResource("13_47xim")
+volume_db = -5.0
 
 [node name="jump" type="AudioStreamPlayer" parent="ne_Buy"]
 stream = ExtResource("10_oe1hj")
@@ -507,6 +508,7 @@ autoplay = "stop"
 
 [node name="back_music" type="AudioStreamPlayer" parent="Superman"]
 stream = ExtResource("9_xx2fl")
+volume_db = -5.0
 
 [node name="jump" type="AudioStreamPlayer" parent="Superman"]
 stream = ExtResource("10_oe1hj")
@@ -521,6 +523,8 @@ frame_progress = 0.0821889
 
 [node name="jump" type="AudioStreamPlayer" parent="Buy"]
 stream = ExtResource("5_4vsup")
+volume_db = 10.0
 
 [node name="back_music" type="AudioStreamPlayer" parent="Buy"]
 stream = ExtResource("15_mdgmk")
+volume_db = -5.0
