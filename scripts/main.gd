@@ -23,3 +23,4 @@ func on_death():
 func _process(_delta):
 	if Input.is_action_just_pressed("exit"):
 		get_tree().change_scene_to_file("res://menu.tscn")
+

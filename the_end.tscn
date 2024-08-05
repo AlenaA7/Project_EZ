@@ -58,20 +58,20 @@ animations = [{
 "speed": 1.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_umfjm"]
-radius = 6.0
-height = 20.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_xsdmp"]
+radius = 8.24621
 
 [node name="the_end" type="Area2D"]
+collision_mask = 2
 script = ExtResource("1_40kjq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -7)
 sprite_frames = SubResource("SpriteFrames_orjau")
 animation = &"happy"
 autoplay = "stop"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 7)
-shape = SubResource("CapsuleShape2D_umfjm")
+shape = SubResource("CircleShape2D_xsdmp")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

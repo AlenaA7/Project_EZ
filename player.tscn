@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://cgultwssk4lnk"]
+[gd_scene load_steps=56 format=3 uid="uid://cgultwssk4lnk"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_4dt17"]
 [ext_resource type="Texture2D" uid="uid://q6q4weyyux1l" path="res://byu7.png" id="2_hvj7m"]
@@ -26,6 +26,10 @@ region = Rect2(0, 0, 18, 29)
 [sub_resource type="AtlasTexture" id="AtlasTexture_xfhay"]
 atlas = ExtResource("4_yjvao")
 region = Rect2(130, 0, 18, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_805nt"]
+atlas = ExtResource("2_jeb67")
+region = Rect2(90, 0, 18, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_okl1b"]
 atlas = ExtResource("2_jeb67")
@@ -78,6 +82,14 @@ animations = [{
 "loop": true,
 "name": &"dead",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_805nt")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -147,6 +159,14 @@ region = Rect2(66, 0, 22, 26)
 atlas = ExtResource("4_y12pa")
 region = Rect2(154, 0, 22, 26)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_co421"]
+atlas = ExtResource("4_y12pa")
+region = Rect2(0, 0, 22, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5fjc"]
+atlas = ExtResource("4_y12pa")
+region = Rect2(22, 0, 22, 26)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_e3tp6"]
 atlas = ExtResource("4_y12pa")
 region = Rect2(44, 0, 22, 26)
@@ -195,6 +215,11 @@ animations = [{
 "name": &"dead",
 "speed": 8.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2o8my")
@@ -206,7 +231,13 @@ animations = [{
 "name": &"jump",
 "speed": 4.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_co421")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5fjc")
+}],
 "loop": true,
 "name": &"on_ladder",
 "speed": 5.0
@@ -257,6 +288,10 @@ region = Rect2(0, 0, 18, 29)
 [sub_resource type="AtlasTexture" id="AtlasTexture_qs1hb"]
 atlas = ExtResource("3_jp2lp")
 region = Rect2(0, 0, 18, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6up8p"]
+atlas = ExtResource("3_jp2lp")
+region = Rect2(90, 0, 18, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1mhaw"]
 atlas = ExtResource("3_jp2lp")
@@ -312,10 +347,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_6up8p")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_1mhaw")
 }],
 "loop": true,
 "name": &"jump",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"on_ladder",
 "speed": 5.0
 }, {
 "frames": [{
@@ -365,20 +413,19 @@ shape = SubResource("CapsuleShape2D_oeyxs")
 visible = false
 position = Vector2(0, 3.5)
 sprite_frames = SubResource("SpriteFrames_jhamf")
-animation = &"on_ladder"
+animation = &"happy"
 autoplay = "stop"
 
 [node name="Superman" type="AnimatedSprite2D" parent="."]
 visible = false
 position = Vector2(-1, 6)
 sprite_frames = SubResource("SpriteFrames_6qean")
-animation = &"on_ladder"
+animation = &"happy"
 autoplay = "stop"
 
 [node name="ne_Buy" type="AnimatedSprite2D" parent="."]
 visible = false
 position = Vector2(0, 3.5)
 sprite_frames = SubResource("SpriteFrames_6ngbi")
-animation = &"dead"
+animation = &"happy"
 autoplay = "stop"
-frame_progress = 0.114664

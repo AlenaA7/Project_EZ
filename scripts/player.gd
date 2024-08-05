@@ -17,6 +17,7 @@ var ladders = {}
 @onready var styles = [$ne_Buy, $Superman, $Buy]
 var sprite: AnimatedSprite2D 
 var is_dead = false
+var the_end = false
 
 func _ready():
 	for style in styles:
@@ -27,7 +28,10 @@ func _ready():
 func _on_dead():
 	is_dead = true
 	get_node("CollisionShape2D").queue_free()
-	velocity.y = JUMP_VELOCITY
+	velocity.y = JUMP_VELOCITY * 1.5
+
+func _on_the_end():
+	the_end = true
 
 func on_lestica(value: bool, ladder_id: int):
 	ladders[ladder_id] = value
@@ -72,14 +76,12 @@ func life_process(delta):
 				
 		
 	if 	is_on_lestnitsa():
-		sprite.play('')
 		if Input.is_action_pressed("up"):
 			velocity.y = -SPEED_ON_LESTICA 
 		elif Input.is_action_pressed("down"):
 			velocity.y = SPEED_ON_LESTICA 
 		else:
 			velocity.y = 0
-		sprite.play("stop")
 	
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor() and not is_on_lestnitsa():
@@ -97,8 +99,12 @@ func life_process(delta):
 	if direction > 0:
 		sprite.flip_h = false
 		
-	if not is_on_floor():
-		sprite.play("jump")
+	if the_end:
+		sprite.play('happy')
+	elif is_on_lestnitsa():
+		sprite.play('on_ladder')
+	elif not is_on_floor():
+		sprite.play("jump")	
 	else:
 		count_jump = 1
 		if direction == 0:
