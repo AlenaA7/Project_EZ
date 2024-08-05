@@ -10,38 +10,48 @@ region = Rect2(16.568, 1.45963, 17.4318, 12.5404)
 
 [sub_resource type="LabelSettings" id="LabelSettings_y1a4i"]
 font = ExtResource("3_6qdno")
-font_size = 40
-outline_size = 5
+outline_size = 3
 outline_color = Color(0.478431, 0.254902, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_kjtq1"]
 font = ExtResource("3_6qdno")
-font_size = 40
-outline_size = 8
+outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
 [node name="hud" type="CanvasLayer"]
 script = ExtResource("1_7tx6e")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 84.0
-offset_bottom = 70.0
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 1.0
+offset_right = -294.0
+offset_bottom = -254.0
 texture = SubResource("AtlasTexture_mct8o")
+metadata/_edit_use_anchors_ = true
 
 [node name="egik" type="Label" parent="."]
-offset_left = 91.0
-offset_top = 28.0
-offset_right = 222.0
-offset_bottom = 79.0
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 3.0
+offset_right = -240.0
+offset_bottom = -267.0
 text = "EZIK: 0 "
 label_settings = SubResource("LabelSettings_y1a4i")
+metadata/_edit_use_anchors_ = true
 
 [node name="death" type="Label" parent="."]
-offset_left = 949.0
-offset_top = 21.0
-offset_right = 1132.0
-offset_bottom = 83.0
+anchors_preset = -1
+anchor_right = 0.994
+anchor_bottom = 1.0
+offset_left = 265.0
+offset_top = 2.0
+offset_right = -0.0800171
+offset_bottom = -278.0
 text = "DEATH: 0"
 label_settings = SubResource("LabelSettings_kjtq1")
+metadata/_edit_use_anchors_ = true

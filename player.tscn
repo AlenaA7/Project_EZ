@@ -485,7 +485,7 @@ position = Vector2(0, 3.5)
 sprite_frames = SubResource("SpriteFrames_jhamf")
 animation = &"happy"
 autoplay = "stop"
-frame_progress = 0.961913
+frame_progress = 0.988842
 
 [node name="Superman" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -500,7 +500,7 @@ position = Vector2(0, 3.5)
 sprite_frames = SubResource("SpriteFrames_6ngbi")
 animation = &"happy"
 autoplay = "stop"
-frame_progress = 0.825737
+frame_progress = 0.24728
 
 [node name="Timer" type="Timer" parent="."]
 
