@@ -61,12 +61,7 @@ func end_process(delta):
 	velocity.x = 0
 	velocity.y = 0
 	text_the_end.visible = true
-	$Timer.start()
 	
-	
-func _on_timer_timeout():
-	text_the_end.visible = false
-	get_tree().change_scene_to_file("res://menu.tscn")
 
 func dead_process(delta):
 	velocity.x = 0
