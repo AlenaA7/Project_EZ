@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://54h7team8o8f"]
+[gd_scene load_steps=11 format=3 uid="uid://54h7team8o8f"]
 
 [ext_resource type="Script" path="res://scripts/the_end.gd" id="1_40kjq"]
 [ext_resource type="Texture2D" uid="uid://biagux7aay7i" path="res://flowers.png" id="2_y1hs7"]
+[ext_resource type="AudioStream" uid="uid://duh7tqppgp46v" path="res://music/happy.mp3" id="3_7s4je"]
+[ext_resource type="AudioStream" uid="uid://fy2qi78ufj85" path="res://music/happy_happy.mp3" id="4_kxgub"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ritkp"]
 atlas = ExtResource("2_y1hs7")
@@ -65,6 +67,12 @@ shape = SubResource("CircleShape2D_xsdmp")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
+
+[node name="buy" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7s4je")
+
+[node name="ne_buy" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_kxgub")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

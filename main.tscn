@@ -318,11 +318,11 @@ position = Vector2(138, 65)
 main = NodePath("../..")
 
 [node name="pshelki3" parent="pshelkis" node_paths=PackedStringArray("main") instance=ExtResource("11_o7vq3")]
-position = Vector2(383, 61)
+position = Vector2(382, 58)
 main = NodePath("../..")
 
 [node name="pshelki4" parent="pshelkis" node_paths=PackedStringArray("main") instance=ExtResource("11_o7vq3")]
-position = Vector2(407, 60)
+position = Vector2(409, 58)
 main = NodePath("../..")
 
 [node name="the_end" parent="." instance=ExtResource("12_nfded")]
@@ -411,7 +411,7 @@ stream = ExtResource("16_rytr5")
 
 [node name="player" parent="." node_paths=PackedStringArray("main") instance=ExtResource("1_1qakr")]
 z_index = 5
-position = Vector2(-657, 229)
+position = Vector2(-669, 223)
 main = NodePath("..")
 
 [node name="Camera2D" type="Camera2D" parent="player"]

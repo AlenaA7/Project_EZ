@@ -15,7 +15,13 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var count_jump = 2
 var ladders = {}
 @onready var styles = [$ne_Buy, $Superman, $Buy]
+@onready var jumpStyles = [$ne_Buy/jump, $Superman/jump, $Buy/jump]
+@onready var backStyles = [$ne_Buy/back_music, $Superman/back_music, $Buy/back_music]
+
 var sprite: AnimatedSprite2D 
+var jumpSound: AudioStreamPlayer
+var backSound: AudioStreamPlayer
+
 var is_dead = false
 var the_end = false
 @onready var text_the_end = $"../texts/the end"
@@ -26,7 +32,12 @@ func _ready():
 	for style in styles:
 		style.visible = false
 	sprite = styles[Global.player_style]
+	jumpSound = jumpStyles[Global.player_style]
+	backSound = backStyles[Global.player_style]
+	
 	sprite.visible = true
+	backSound.play()
+
 
 func _on_dead():
 	is_dead = true
@@ -74,11 +85,14 @@ func dead_process(delta):
 		
 
 func life_process(delta):
+	
+	
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
 	if Input.is_action_just_pressed("jump"):	
 		if count_jump > 0:
+			jumpSound.play()
 			velocity.y = JUMP_VELOCITY
 			count_jump -= 1
 		else:

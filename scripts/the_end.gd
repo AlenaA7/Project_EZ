@@ -1,7 +1,14 @@
 extends Area2D
 @onready var sprite = $AnimatedSprite2D
+@onready var happy_musics = [$ne_buy, $ne_buy,$buy ]
+
+var happy_music: AudioStreamPlayer
+
+func _ready():
+	happy_music = happy_musics[Global.player_style]
 
 func _on_body_entered(body):
+	happy_music.play()
 	if body is Player:
 		body._on_the_end()
 		sprite.play('happy')
