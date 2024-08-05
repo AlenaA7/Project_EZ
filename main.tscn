@@ -396,7 +396,7 @@ main = NodePath("..")
 
 [node name="player" parent="." node_paths=PackedStringArray("main") instance=ExtResource("1_1qakr")]
 z_index = 5
-position = Vector2(1491, 55)
+position = Vector2(-713, 239)
 main = NodePath("..")
 
 [node name="Camera2D" type="Camera2D" parent="player"]
