@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://cgultwssk4lnk"]
+[gd_scene load_steps=66 format=3 uid="uid://cgultwssk4lnk"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_4dt17"]
 [ext_resource type="Texture2D" uid="uid://q6q4weyyux1l" path="res://byu7.png" id="2_hvj7m"]
@@ -27,13 +27,33 @@ region = Rect2(0, 0, 18, 29)
 atlas = ExtResource("4_yjvao")
 region = Rect2(130, 0, 18, 29)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_805nt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_w21i6"]
 atlas = ExtResource("2_jeb67")
 region = Rect2(90, 0, 18, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56gyl"]
+atlas = ExtResource("2_jeb67")
+region = Rect2(126, 0, 18, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71u0f"]
+atlas = ExtResource("2_jeb67")
+region = Rect2(144, 0, 18, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckvya"]
+atlas = ExtResource("2_jeb67")
+region = Rect2(126, 0, 18, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_okl1b"]
 atlas = ExtResource("2_jeb67")
 region = Rect2(90, 0, 18, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3om8k"]
+atlas = ExtResource("2_jeb67")
+region = Rect2(90, 0, 18, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmjk8"]
+atlas = ExtResource("2_jeb67")
+region = Rect2(144, 0, 18, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_57dxl"]
 atlas = ExtResource("2_jeb67")
@@ -85,7 +105,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_805nt")
+"texture": SubResource("AtlasTexture_w21i6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56gyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71u0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckvya")
 }],
 "loop": true,
 "name": &"happy",
@@ -99,10 +128,16 @@ animations = [{
 "name": &"jump",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3om8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmjk8")
+}],
 "loop": true,
 "name": &"on_ladder",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -289,13 +324,33 @@ region = Rect2(0, 0, 18, 29)
 atlas = ExtResource("3_jp2lp")
 region = Rect2(0, 0, 18, 29)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6up8p"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlw13"]
 atlas = ExtResource("3_jp2lp")
-region = Rect2(90, 0, 18, 29)
+region = Rect2(108, 0, 18, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xenu0"]
+atlas = ExtResource("3_jp2lp")
+region = Rect2(126, 0, 18, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbtvs"]
+atlas = ExtResource("3_jp2lp")
+region = Rect2(108, 0, 18, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_baqtn"]
+atlas = ExtResource("3_jp2lp")
+region = Rect2(145, 0, 18, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1mhaw"]
 atlas = ExtResource("3_jp2lp")
 region = Rect2(90, 0, 18, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnw61"]
+atlas = ExtResource("3_jp2lp")
+region = Rect2(126, 0, 18, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2ipf"]
+atlas = ExtResource("3_jp2lp")
+region = Rect2(144, 0, 18, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g6trm"]
 atlas = ExtResource("3_jp2lp")
@@ -347,11 +402,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6up8p")
+"texture": SubResource("AtlasTexture_tlw13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xenu0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbtvs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_baqtn")
 }],
 "loop": true,
 "name": &"happy",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -361,10 +425,16 @@ animations = [{
 "name": &"jump",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnw61")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2ipf")
+}],
 "loop": true,
 "name": &"on_ladder",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -415,6 +485,7 @@ position = Vector2(0, 3.5)
 sprite_frames = SubResource("SpriteFrames_jhamf")
 animation = &"happy"
 autoplay = "stop"
+frame_progress = 0.56289
 
 [node name="Superman" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -429,3 +500,8 @@ position = Vector2(0, 3.5)
 sprite_frames = SubResource("SpriteFrames_6ngbi")
 animation = &"happy"
 autoplay = "stop"
+frame_progress = 0.906515
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

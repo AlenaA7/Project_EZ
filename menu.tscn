@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://5r2unh2dcj27"]
+[gd_scene load_steps=9 format=3 uid="uid://5r2unh2dcj27"]
 
 [ext_resource type="Texture2D" uid="uid://brny044is15yd" path="res://ne_buy.png" id="1_b14sc"]
 [ext_resource type="FontFile" uid="uid://dnobr83k1q170" path="res://monogram-extended.ttf" id="2_6vd2a"]
@@ -16,6 +16,8 @@ font_size = 64
 [sub_resource type="AtlasTexture" id="AtlasTexture_goip0"]
 atlas = ExtResource("4_746gc")
 region = Rect2(43, 0, 21, 26)
+
+[sub_resource type="TileSet" id="TileSet_mrl72"]
 
 [node name="menu" type="Control"]
 layout_mode = 3
@@ -57,6 +59,10 @@ offset_right = 810.0
 offset_bottom = 514.0
 texture_normal = SubResource("AtlasTexture_goip0")
 stretch_mode = 4
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_mrl72")
+format = 2
 
 [connection signal="pressed" from="Ded" to="." method="_on_ded_pressed"]
 [connection signal="pressed" from="Hero" to="." method="_on_hero_pressed"]

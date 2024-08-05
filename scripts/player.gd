@@ -18,6 +18,7 @@ var ladders = {}
 var sprite: AnimatedSprite2D 
 var is_dead = false
 var the_end = false
+@onready var text_the_end = $"../texts/the end"
 
 func _ready():
 	for style in styles:
@@ -50,14 +51,26 @@ func _process(_delta):
 func _physics_process(delta):
 	if is_dead:
 		dead_process(delta)
+	elif the_end:
+		end_process(delta) 
 	else:
 		life_process(delta)
 		
+func end_process(delta):
+	sprite.play('happy')
+	velocity.x = 0
+	velocity.y = 0
+	text_the_end.visible = true
+	$Timer.start()
+	
+	
+func _on_timer_timeout():
+	text_the_end.visible = false
+	get_tree().change_scene_to_file("res://menu.tscn")
+
 func dead_process(delta):
 	velocity.x = 0
 	sprite.play("dead")
-	
-	
 	velocity.y += gravity * delta
 	move_and_slide()
 	
@@ -99,9 +112,7 @@ func life_process(delta):
 	if direction > 0:
 		sprite.flip_h = false
 		
-	if the_end:
-		sprite.play('happy')
-	elif is_on_lestnitsa():
+	if is_on_lestnitsa():
 		sprite.play('on_ladder')
 	elif not is_on_floor():
 		sprite.play("jump")	
@@ -124,6 +135,7 @@ func life_process(delta):
 				var dir = col.get_normal().rotated(-direction * PI/4) * - pushForce
 				col.get_collider().apply_force(dir)
 		
+
 
 
 
