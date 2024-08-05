@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://vetkef0td2a1"]
+[gd_scene load_steps=31 format=3 uid="uid://vetkef0td2a1"]
 
 [ext_resource type="PackedScene" uid="uid://cgultwssk4lnk" path="res://player.tscn" id="1_1qakr"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_2bfif"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://54h7team8o8f" path="res://the_end.tscn" id="12_nfded"]
 [ext_resource type="PackedScene" uid="uid://ctfl04vsqp0m4" path="res://lestica.tscn" id="12_w7s8x"]
 [ext_resource type="Texture2D" uid="uid://m7bvi7imjveg" path="res://череп2.png" id="13_36cya"]
+[ext_resource type="AudioStream" uid="uid://kbp35cck71ri" path="res://music/game_over_music.mp3" id="16_rytr5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ofsyu"]
 font = ExtResource("10_kvtll")
@@ -405,9 +406,12 @@ main = NodePath("..")
 position = Vector2(-30, 196)
 shape = SubResource("WorldBoundaryShape2D_es33y")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="KillZone"]
+stream = ExtResource("16_rytr5")
+
 [node name="player" parent="." node_paths=PackedStringArray("main") instance=ExtResource("1_1qakr")]
 z_index = 5
-position = Vector2(1502, 98)
+position = Vector2(-657, 229)
 main = NodePath("..")
 
 [node name="Camera2D" type="Camera2D" parent="player"]

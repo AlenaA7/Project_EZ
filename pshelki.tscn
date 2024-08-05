@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bbk6wy38lqiv2"]
+[gd_scene load_steps=9 format=3 uid="uid://bbk6wy38lqiv2"]
 
 [ext_resource type="Script" path="res://scripts/KillZone.gd" id="1_p586l"]
 [ext_resource type="Texture2D" uid="uid://c7524hbxb8312" path="res://pchelkisweg.png" id="2_7wq5t"]
+[ext_resource type="AudioStream" uid="uid://kbp35cck71ri" path="res://music/game_over_music.mp3" id="3_dcqwn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lke1n"]
 radius = 12.0416
@@ -50,6 +51,9 @@ sprite_frames = SubResource("SpriteFrames_ix6yj")
 animation = &"pshelki"
 autoplay = "pshelki"
 frame_progress = 0.726755
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_dcqwn")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="killtime" to="." method="_on_killtime_timeout"]

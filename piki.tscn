@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0sq7emphuekq"]
+[gd_scene load_steps=8 format=3 uid="uid://b0sq7emphuekq"]
 
 [ext_resource type="Script" path="res://scripts/KillZone.gd" id="1_18slt"]
 [ext_resource type="Texture2D" uid="uid://de0owj2lej7nb" path="res://muravishki.png" id="2_xdadl"]
+[ext_resource type="AudioStream" uid="uid://kbp35cck71ri" path="res://music/game_over_music.mp3" id="3_leogt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yd6cf"]
 radius = 7.07107
@@ -44,6 +45,9 @@ autoplay = "murav"
 frame_progress = 0.164661
 
 [node name="killtime" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_leogt")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="killtime" to="." method="_on_killtime_timeout"]

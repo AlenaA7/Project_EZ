@@ -5,6 +5,7 @@ extends Node2D
 
 const JUMP_VELOCITY = -250.0
 var should_restart = false
+@onready var sound = $AudioStreamPlayer
 
 func _process(_delta):
 	if should_restart:
@@ -14,6 +15,7 @@ func _process(_delta):
 
 func _on_body_entered(body):
 	if body is Player:
+		sound.play()
 		$killtime.start()
 		body._on_dead()
 	

@@ -20,6 +20,8 @@ var is_dead = false
 var the_end = false
 @onready var text_the_end = $"../texts/the end"
 
+
+
 func _ready():
 	for style in styles:
 		style.visible = false

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://d10hbb3odw5p4"]
+[gd_scene load_steps=8 format=3 uid="uid://d10hbb3odw5p4"]
 
 [ext_resource type="Texture2D" uid="uid://gcsvf67lntml" path="res://AD.png" id="1_0hnii"]
 [ext_resource type="Script" path="res://scripts/KillZone.gd" id="2_1vdtb"]
+[ext_resource type="AudioStream" uid="uid://bekreb4qavhdv" path="res://music/game_over.mp3" id="3_m70pk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x03w7"]
 atlas = ExtResource("1_0hnii")
@@ -39,6 +40,7 @@ frame_progress = 0.100287
 script = ExtResource("2_1vdtb")
 
 [node name="killtime" type="Timer" parent="."]
+wait_time = 1.2
 
 [node name="KillZone" type="Area2D" parent="."]
 collision_mask = 2
@@ -46,6 +48,9 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
 position = Vector2(1.44737, 1.44737)
 shape = SubResource("CapsuleShape2D_dl8q3")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_m70pk")
 
 [connection signal="timeout" from="killtime" to="." method="_on_killtime_timeout"]
 [connection signal="body_entered" from="KillZone" to="." method="_on_body_entered"]
