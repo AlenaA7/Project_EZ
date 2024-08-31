@@ -1,0 +1,249 @@
+[gd_scene load_steps=19 format=3 uid="uid://tjhqhc2jx7db"]
+
+[ext_resource type="Texture2D" uid="uid://10cwhbuvkgjl" path="res://nature-paltformer-tileset-16x16.png" id="1_1runp"]
+[ext_resource type="FontFile" uid="uid://dnobr83k1q170" path="res://monogram-extended.ttf" id="1_ddug7"]
+[ext_resource type="Script" path="res://control.gd" id="1_ntq40"]
+[ext_resource type="Texture2D" uid="uid://dr070tcdlvvp8" path="res://klava.png" id="2_3kpmg"]
+[ext_resource type="Texture2D" uid="uid://d2n6qqume44ir" path="res://home.png" id="4_c3oge"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_31of0"]
+texture = ExtResource("1_1runp")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_m46us"]
+sources/0 = SubResource("TileSetAtlasSource_31of0")
+
+[sub_resource type="LabelSettings" id="LabelSettings_574vr"]
+font = ExtResource("1_ddug7")
+font_size = 32
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mavdh"]
+atlas = ExtResource("2_3kpmg")
+region = Rect2(677.214, 153.615, 155.195, 105.415)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5rb5"]
+atlas = ExtResource("2_3kpmg")
+region = Rect2(857.776, 154.5, 161, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10dlw"]
+atlas = ExtResource("2_3kpmg")
+region = Rect2(152.981, 1.5, 243, 48)
+
+[sub_resource type="LabelSettings" id="LabelSettings_81a4t"]
+font = ExtResource("1_ddug7")
+
+[sub_resource type="LabelSettings" id="LabelSettings_1sslx"]
+font = ExtResource("1_ddug7")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kirn2"]
+atlas = ExtResource("2_3kpmg")
+region = Rect2(7.35951, 155.791, 118.592, 49.7794)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wivkn"]
+atlas = ExtResource("2_3kpmg")
+region = Rect2(350.217, 101.24, 45.3871, 55.6358)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3lb4r"]
+font = ExtResource("1_ddug7")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikydb"]
+atlas = ExtResource("2_3kpmg")
+region = Rect2(559.583, 102.704, 46.8512, 52.7076)
+
+[sub_resource type="LabelSettings" id="LabelSettings_y1ai5"]
+font = ExtResource("1_ddug7")
+
+[node name="control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ntq40")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_m46us")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 262144, 10, 65536, 262144, 10, 131072, 262144, 10, 196608, 262144, 10, 262144, 262144, 10, 327680, 262144, 10, 393216, 262144, 10, 458752, 262144, 10, 524288, 262144, 10, 589824, 262144, 10, 655360, 262144, 10, 720896, 262144, 10, 1, 262144, 10, 65537, 262144, 10, 131073, 131072, 7, 196609, 131072, 8, 262145, 262144, 10, 327681, 262144, 10, 393217, 262144, 10, 458753, 262144, 10, 524289, 262144, 10, 589825, 262144, 10, 655361, 262144, 10, 720897, 262144, 10, 2, 262144, 10, 65538, 131072, 7, 131074, 262144, 8, 196610, 196608, 8, 262146, 262144, 10, 327682, 131072, 9, 393218, 131072, 10, 458754, 262144, 10, 524290, 262144, 10, 589826, 262144, 10, 655362, 262144, 10, 720898, 262144, 10, 3, 262144, 10, 65539, 196608, 7, 131075, 196608, 8, 196611, 262144, 10, 262147, 262144, 10, 327683, 196608, 9, 393219, 196608, 10, 458755, 262144, 10, 524291, 262144, 10, 589827, 262144, 10, 655363, 262144, 10, 720899, 262144, 10, 4, 262144, 10, 65540, 262144, 10, 131076, 262144, 10, 196612, 262144, 10, 262148, 262144, 10, 327684, 262144, 10, 393220, 262144, 10, 458756, 262144, 10, 524292, 262144, 10, 589828, 262144, 10, 655364, 262144, 10, 720900, 262144, 10, 5, 262144, 10, 65541, 262144, 10, 131077, 262144, 10, 196613, 262144, 10, 262149, 262144, 10, 327685, 262144, 10, 393221, 262144, 10, 458757, 262144, 10, 524293, 262144, 10, 589829, 262144, 10, 655365, 262144, 10, 720901, 262144, 10, 6, 262144, 10, 65542, 262144, 10, 131078, 262144, 10, 196614, 262144, 10, 262150, 262144, 10, 327686, 262144, 10, 393222, 262144, 10, 458758, 262144, 10, 524294, 262144, 10, 589830, 131072, 9, 655366, 131072, 10, 720902, 262144, 10, 7, 262144, 10, 65543, 262144, 10, 131079, 262144, 10, 196615, 262144, 10, 262151, 262144, 10, 327687, 262144, 10, 393223, 262144, 10, 458759, 262144, 10, 524295, 262144, 10, 589831, 196608, 9, 655367, 196608, 10, 720903, 262144, 10, 8, 262144, 10, 65544, 262144, 10, 131080, 262144, 10, 196616, 262144, 10, 262152, 262144, 10, 327688, 262144, 10, 393224, 262144, 10, 458760, 262144, 10, 524296, 262144, 10, 589832, 262144, 10, 655368, 262144, 10, 720904, 262144, 10, 9, 262144, 10, 65545, 262144, 10, 131081, 262144, 10, 196617, 262144, 10, 262153, 262144, 10, 327689, 262144, 10, 393225, 262144, 10, 458761, 262144, 10, 524297, 262144, 10, 589833, 262144, 10, 655369, 262144, 10, 720905, 262144, 10, 10, 262144, 10, 65546, 262144, 10, 131082, 262144, 10, 196618, 262144, 10, 262154, 262144, 10, 327690, 262144, 10, 393226, 262144, 10, 458762, 262144, 10, 524298, 262144, 10, 589834, 262144, 10, 655370, 262144, 10, 720906, 262144, 10, 11, 262144, 10, 65547, 262144, 10, 131083, 262144, 10, 196619, 262144, 10, 262155, 262144, 10, 327691, 262144, 10, 393227, 262144, 10, 458763, 262144, 10, 524299, 262144, 10, 589835, 262144, 10, 655371, 262144, 10, 720907, 262144, 10, 12, 262144, 10, 65548, 262144, 10, 131084, 262144, 10, 196620, 262144, 10, 262156, 262144, 10, 327692, 262144, 10, 393228, 262144, 10, 458764, 262144, 10, 524300, 262144, 10, 589836, 262144, 10, 655372, 262144, 10, 720908, 262144, 10, 13, 262144, 10, 65549, 262144, 10, 131085, 262144, 10, 196621, 262144, 10, 262157, 262144, 10, 327693, 262144, 10, 393229, 262144, 10, 458765, 262144, 10, 524301, 262144, 10, 589837, 262144, 10, 655373, 262144, 10, 720909, 262144, 10, 14, 131072, 9, 65550, 131072, 10, 131086, 262144, 10, 196622, 262144, 10, 262158, 262144, 10, 327694, 262144, 10, 393230, 262144, 10, 458766, 262144, 10, 524302, 262144, 10, 589838, 262144, 10, 655374, 262144, 10, 720910, 262144, 10, 15, 196608, 9, 65551, 196608, 10, 131087, 262144, 10, 196623, 131072, 9, 262159, 131072, 10, 327695, 262144, 10, 393231, 262144, 10, 458767, 262144, 10, 524303, 262144, 10, 589839, 262144, 10, 655375, 262144, 10, 720911, 262144, 10, 16, 262144, 10, 65552, 262144, 10, 131088, 262144, 10, 196624, 131072, 7, 262160, 262144, 8, 327696, 131072, 8, 393232, 262144, 10, 458768, 262144, 10, 524304, 262144, 10, 589840, 262144, 10, 655376, 262144, 10, 720912, 262144, 10, 17, 262144, 10, 65553, 262144, 10, 131089, 262144, 10, 196625, 262144, 7, 262161, 262144, 8, 327697, 262144, 9, 393233, 262144, 10, 458769, 262144, 10, 524305, 262144, 10, 589841, 262144, 10, 655377, 262144, 10, 720913, 262144, 10, 18, 262144, 10, 65554, 262144, 10, 131090, 262144, 10, 196626, 196608, 9, 262162, 196608, 7, 327698, 262144, 10, 393234, 262144, 10, 458770, 262144, 10, 524306, 262144, 10, 589842, 262144, 10, 655378, 262144, 10, 720914, 262144, 10, 19, 262144, 10, 65555, 262144, 10, 131091, 262144, 10, 196627, 262144, 10, 262163, 262144, 10, 327699, 262144, 10, 393235, 262144, 10, 458771, 262144, 10, 524307, 262144, 10, 589843, 262144, 10, 655379, 262144, 10, 720915, 262144, 10)
+
+[node name="text" type="Label" parent="."]
+offset_left = 106.0
+offset_top = 68.0
+offset_right = 226.0
+offset_bottom = 94.0
+text = "Управление"
+label_settings = SubResource("LabelSettings_574vr")
+
+[node name="text2" type="Label" parent="."]
+offset_left = 115.0
+offset_top = 2.0
+offset_right = 209.0
+offset_bottom = 28.0
+text = "Правила
+"
+label_settings = SubResource("LabelSettings_574vr")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 150.0
+offset_top = 115.0
+offset_right = 228.0
+offset_bottom = 168.0
+texture = SubResource("AtlasTexture_mavdh")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 5.0
+offset_top = 116.0
+offset_right = 80.0
+offset_bottom = 168.0
+texture = SubResource("AtlasTexture_l5rb5")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = 79.0
+offset_top = 121.0
+offset_right = 152.0
+offset_bottom = 140.0
+texture = SubResource("AtlasTexture_10dlw")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 81.0
+offset_top = 106.0
+offset_right = 153.0
+offset_bottom = 124.0
+text = "Прыжок также"
+label_settings = SubResource("LabelSettings_81a4t")
+
+[node name="restart" type="Label" parent="."]
+offset_left = 246.0
+offset_top = 107.0
+offset_right = 288.0
+offset_bottom = 130.0
+text = "Рестарт"
+label_settings = SubResource("LabelSettings_1sslx")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+offset_left = 244.0
+offset_top = 122.0
+offset_right = 276.0
+offset_bottom = 135.0
+texture = SubResource("AtlasTexture_kirn2")
+expand_mode = 1
+
+[node name="TextureRect6" type="TextureRect" parent="."]
+offset_left = 243.0
+offset_top = 160.0
+offset_right = 275.0
+offset_bottom = 173.0
+texture = SubResource("AtlasTexture_kirn2")
+expand_mode = 1
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+offset_left = 277.0
+offset_top = 121.0
+offset_right = 290.0
+offset_bottom = 135.0
+texture = SubResource("AtlasTexture_wivkn")
+expand_mode = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 237.0
+offset_top = 143.0
+offset_right = 303.0
+offset_bottom = 156.0
+text = "Тайный скин"
+label_settings = SubResource("LabelSettings_3lb4r")
+
+[node name="TextureRect7" type="TextureRect" parent="."]
+offset_left = 278.0
+offset_top = 159.0
+offset_right = 291.0
+offset_bottom = 172.0
+texture = SubResource("AtlasTexture_ikydb")
+expand_mode = 1
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 79.0
+offset_top = 34.0
+offset_right = 242.0
+offset_bottom = 63.0
+text = "Раннер, где нужно собирать 
+ёжиков и убегать от головы"
+label_settings = SubResource("LabelSettings_y1ai5")
+
+[node name="home" type="TextureButton" parent="."]
+offset_left = 269.0
+offset_right = 322.0
+offset_bottom = 26.0
+texture_normal = ExtResource("4_c3oge")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="home" to="." method="_on_home_pressed"]
