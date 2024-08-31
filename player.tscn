@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://cgultwssk4lnk"]
+[gd_scene load_steps=74 format=3 uid="uid://cgultwssk4lnk"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_4dt17"]
 [ext_resource type="Texture2D" uid="uid://q6q4weyyux1l" path="res://byu7.png" id="2_hvj7m"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://con5nbqaqvpor" path="res://super2.png" id="8_hfc2w"]
 [ext_resource type="Texture2D" uid="uid://b5g1lq5rh56cc" path="res://super52.png" id="9_ktncv"]
 [ext_resource type="AudioStream" uid="uid://dux33866bbusw" path="res://music/back1.mp3" id="9_xx2fl"]
+[ext_resource type="Texture2D" uid="uid://ditld61vtimql" path="res://superman2.png" id="10_n2xju"]
 [ext_resource type="AudioStream" uid="uid://n4mqu4b7hhdn" path="res://music/good_jump.mp3" id="10_oe1hj"]
 [ext_resource type="AudioStream" uid="uid://d0ixoya5o8ipw" path="res://music/back2.mp3" id="13_47xim"]
 [ext_resource type="AudioStream" uid="uid://v0pejirpgt7x" path="res://music/back3.mp3" id="15_mdgmk"]
@@ -191,6 +192,14 @@ region = Rect2(0, 0, 18, 26)
 atlas = ExtResource("4_y12pa")
 region = Rect2(198, 0, 22, 26)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_01q7n"]
+atlas = ExtResource("10_n2xju")
+region = Rect2(132, 0, 22, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nbl6"]
+atlas = ExtResource("10_n2xju")
+region = Rect2(176, 0, 22, 26)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_2o8my"]
 atlas = ExtResource("4_y12pa")
 region = Rect2(66, 0, 22, 26)
@@ -255,7 +264,13 @@ animations = [{
 "name": &"dead",
 "speed": 8.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01q7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nbl6")
+}],
 "loop": true,
 "name": &"happy",
 "speed": 5.0
@@ -500,10 +515,9 @@ volume_db = -5.0
 stream = ExtResource("10_oe1hj")
 
 [node name="Superman" type="AnimatedSprite2D" parent="."]
-visible = false
 position = Vector2(-1, 6)
 sprite_frames = SubResource("SpriteFrames_6qean")
-animation = &"happy"
+animation = &"dead"
 autoplay = "stop"
 
 [node name="back_music" type="AudioStreamPlayer" parent="Superman"]

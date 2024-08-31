@@ -157,7 +157,6 @@ expand_mode = 1
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_nvfua")
 volume_db = 10.0
-autoplay = true
 
 [connection signal="pressed" from="Ded" to="." method="_on_ded_pressed"]
 [connection signal="pressed" from="Hero" to="." method="_on_hero_pressed"]
