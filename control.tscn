@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://tjhqhc2jx7db"]
+[gd_scene load_steps=20 format=3 uid="uid://tjhqhc2jx7db"]
 
 [ext_resource type="Texture2D" uid="uid://10cwhbuvkgjl" path="res://nature-paltformer-tileset-16x16.png" id="1_1runp"]
 [ext_resource type="FontFile" uid="uid://dnobr83k1q170" path="res://monogram-extended.ttf" id="1_ddug7"]
 [ext_resource type="Script" path="res://control.gd" id="1_ntq40"]
 [ext_resource type="Texture2D" uid="uid://dr070tcdlvvp8" path="res://klava.png" id="2_3kpmg"]
 [ext_resource type="Texture2D" uid="uid://d2n6qqume44ir" path="res://home.png" id="4_c3oge"]
+[ext_resource type="AudioStream" uid="uid://cnc8nqs0pjqru" path="res://music/fyr.mp3" id="6_o0ggk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_31of0"]
 texture = ExtResource("1_1runp")
@@ -245,5 +246,9 @@ offset_bottom = 26.0
 texture_normal = ExtResource("4_c3oge")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_o0ggk")
+autoplay = true
 
 [connection signal="pressed" from="home" to="." method="_on_home_pressed"]

@@ -57,9 +57,9 @@ region = Rect2(90, 0, 18, 29)
 atlas = ExtResource("3_jp2lp")
 region = Rect2(126, 0, 18, 29)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r2ipf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5hlu"]
 atlas = ExtResource("3_jp2lp")
-region = Rect2(144, 0, 18, 29)
+region = Rect2(146, 0, 18, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g6trm"]
 atlas = ExtResource("3_jp2lp")
@@ -139,7 +139,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_tnw61")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_r2ipf")
+"texture": SubResource("AtlasTexture_l5hlu")
 }],
 "loop": true,
 "name": &"on_ladder",
@@ -503,9 +503,8 @@ shape = SubResource("CapsuleShape2D_oeyxs")
 visible = false
 position = Vector2(0, 3.5)
 sprite_frames = SubResource("SpriteFrames_6ngbi")
-animation = &"happy"
+animation = &"on_ladder"
 autoplay = "stop"
-frame_progress = 0.922158
 
 [node name="back_music" type="AudioStreamPlayer" parent="ne_Buy"]
 stream = ExtResource("13_47xim")
